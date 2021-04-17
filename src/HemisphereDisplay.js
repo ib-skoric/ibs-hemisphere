@@ -1,6 +1,7 @@
 import React from 'react';
 import northernPic from './images/NorthernHemisphere.jpg';
 import southernPic from './images/SouthernHemisphere.jpg';
+import './Hemisphere.css'
 
 // object with northern and southern object and their values - text to display and picture variable
 const hemisphereConfig = {
@@ -26,9 +27,16 @@ const HemisphereDisplay = ( { latitude } ) => {
     const { text, picture } = hemisphereConfig[hemisphere];
 
     return(
-        <div>
-            <img src={picture} alt="Hemisphere picture" />
-            { text }
+        // this will return either northern or southern as a class name depending on the latitude
+        <div className={ hemisphere }>
+            <div className="ui raised text container segment">
+                <div className="image">
+                    <img src={picture} alt="Hemisphere picture" />
+                </div>
+                <div className="ui teal bottom attached label">
+                    <h1>{ text }</h1>
+                </div>
+            </div>
         </div>
     )
 }
