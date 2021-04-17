@@ -27,14 +27,16 @@ const HemisphereDisplay = ( { latitude } ) => {
     const { text, picture } = hemisphereConfig[hemisphere];
 
     return(
-        // this will return either northern or southern as a class name depending on the latitude
-        <div className={ hemisphere }>
-            <div className="ui raised text container segment">
-                <div className="image">
-                    <img src={picture} alt="Hemisphere picture" />
-                </div>
-                <div className="ui teal bottom attached label">
-                    <h1>{ text }</h1>
+        <div>
+            <div className={ hemisphere }>
+                {/* this will return either northern or southern as a class name depending on the latitude */}
+                <div className="ui raised text container segment">
+                    <div className="image">
+                        <img src={picture} alt="Hemisphere picture" />
+                    </div>
+                    <div className="ui teal bottom attached label">
+                        <h1>{ text }</h1>
+                    </div>
                 </div>
             </div>
         </div>
